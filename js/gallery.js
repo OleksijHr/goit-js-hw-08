@@ -66,7 +66,7 @@ const images = [
 
 
 const gallery = document.querySelector(".gallery");
-const galleryItem = document.querySelector(".gallery-item");
+
 
 const galleryItems = ({ preview, original, description }) =>
   `<li class = "gallery-item">
@@ -85,16 +85,13 @@ const galleryMarkup = images.reduce(
 
 gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
 
+
+
 gallery.addEventListener("click", function (event) {
-  const galleryImage = document.querySelector(".gallery-image");
+   const originalSize = basicLightbox.create(`
+//   <img src = "${event.target.dataset.source}"
+//   alt = "${event.target.alt}"
+//   />`)
+  
+  originalSize.show()
 });
-
-const instance = basicLightbox.create(`
-    <h1>Dynamic Content</h1>
-    <p>You can set the content of the lightbox with JS.</p>
-`)
-// document.querySelector('button.image').onclick = () => {
-
-// 	basicLightbox.create(`
-// 		<img width="1400" height="900" src="https://placehold.it/1400x900">
-// 	`).show()
